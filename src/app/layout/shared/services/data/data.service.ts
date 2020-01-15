@@ -29,5 +29,9 @@ public createProduct(product: Product): any{
 this.productApi.create(product).subscribe();
 }
  
-  
+public getById (id: number){
+  this.productApi.get(id).subscribe();
+}
+
+
 }

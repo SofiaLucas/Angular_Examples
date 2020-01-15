@@ -11,6 +11,10 @@ import { ProductService } from '../shared/services/product/product.service';
 })
 export class ProductsComponent implements OnInit, OnDestroy {
   public products$: ReplaySubject<any[]>
+  public product = new Product();
+  public productId: number;
+
+  public msgById: string;
 
   private subProducts: Subscription;
   constructor(
@@ -38,9 +42,16 @@ export class ProductsComponent implements OnInit, OnDestroy {
     const product = new Product(data);
     this.data.createProduct(product);
 
-
   }
 
+  public getAll(){
+  this.data.getProducts();
+  }
+  
+public getById(){
+  let id = 2;
+  this.data.getById(id);
+}
 
 
 }
